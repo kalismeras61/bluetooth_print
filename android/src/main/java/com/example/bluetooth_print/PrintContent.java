@@ -28,6 +28,9 @@ public class PrintContent {
             //打印走纸多少个单位
             esc.addPrintAndFeedLines((byte) 1);
 
+            esc.addSelectCodePage(EscCommand.CODEPAGE.PC866);
+esc.addText(content, "cp866");
+
             // {type:'text|barcode|qrcode|image', content:'', size:4, align: 0|1|2, weight: 0|1, width:0|1, height:0|1, underline:0|1, linefeed: 0|1}
             for (Map<String,Object> m: list) {
                   String type = (String)m.get("type");
@@ -55,7 +58,7 @@ public class PrintContent {
                         short aPos = (short)absolutePos;
                         short rPos = (short)relativePos;
                         Log.e(TAG,"******************* absolutePos: " + aPos +", relativePos: " + rPos +", fontZoom: " + fontZoom);
-                        esc.addSelectCodePage(EscCommand.CODEPAGE.PC866);
+
                         // 设置绝对打印位置，将当前打印位置设置到距离行首 n* hor_motion_unit 点
                         esc.addSetAbsolutePrintPosition(aPos);
                         // 设置相对打印位置，将打印位置设置到距当前位置 n 点处

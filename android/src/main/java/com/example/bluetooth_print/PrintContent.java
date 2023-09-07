@@ -55,7 +55,7 @@ public class PrintContent {
                         short aPos = (short)absolutePos;
                         short rPos = (short)relativePos;
                         Log.e(TAG,"******************* absolutePos: " + aPos +", relativePos: " + rPos +", fontZoom: " + fontZoom);
-
+                        esc.addSelectCodePage(EscCommand.CODEPAGE.PC866);
                         // 设置绝对打印位置，将当前打印位置设置到距离行首 n* hor_motion_unit 点
                         esc.addSetAbsolutePrintPosition(aPos);
                         // 设置相对打印位置，将打印位置设置到距当前位置 n 点处
@@ -67,7 +67,7 @@ public class PrintContent {
                         }else{
                               esc.addSetKanjiFontMode(EscCommand.ENABLE.OFF, EscCommand.ENABLE.OFF, EscCommand.ENABLE.OFF);
                         }
-                        esc.addText(content);
+                        esc.addText(content, "cp866");
                         // 取消倍高倍宽
                         esc.addSelectPrintModes(EscCommand.FONT.FONTA, EscCommand.ENABLE.OFF, EscCommand.ENABLE.OFF, EscCommand.ENABLE.OFF, EscCommand.ENABLE.OFF);
                   }else if("barcode".equals(type)){

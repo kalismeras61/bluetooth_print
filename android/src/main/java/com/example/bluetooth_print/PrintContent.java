@@ -69,7 +69,7 @@ public class PrintContent {
                         }else{
                               esc.addSetKanjiFontMode(EscCommand.ENABLE.OFF, EscCommand.ENABLE.OFF, EscCommand.ENABLE.OFF);
                         }
-                        esc.addText(content, "cp866");
+                        esc.addText(content, "CP1252");
                         // 取消倍高倍宽
                         esc.addSelectPrintModes(EscCommand.FONT.FONTA, EscCommand.ENABLE.OFF, EscCommand.ENABLE.OFF, EscCommand.ENABLE.OFF, EscCommand.ENABLE.OFF);
                   }else if("barcode".equals(type)){

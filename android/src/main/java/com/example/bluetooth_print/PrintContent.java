@@ -28,8 +28,6 @@ public class PrintContent {
             //打印走纸多少个单位
             esc.addPrintAndFeedLines((byte) 1);
 
-            esc.addSelectCodePage(EscCommand.CODEPAGE.CP1252);
-
             // {type:'text|barcode|qrcode|image', content:'', size:4, align: 0|1|2, weight: 0|1, width:0|1, height:0|1, underline:0|1, linefeed: 0|1}
             for (Map<String,Object> m: list) {
                   String type = (String)m.get("type");

@@ -61,7 +61,7 @@ typedef enum : NSUInteger{
  *  方法说明：更新蓝牙状态
  *  @param state 蓝牙状态
  */
--(void)didUpdateState:(void(^)(NSInteger state))state;
+-(void)didUpdateState:(void(^_Nonnull)(NSInteger state))state;
 
 /**
  *  方法说明：连接外设
@@ -70,7 +70,7 @@ typedef enum : NSUInteger{
  *  @param timeout 连接时间
  *  @param connectState 连接状态
  */
--(void)connectPeripheral:(CBPeripheral *)peripheral options:(nullable NSDictionary<NSString *,id> *)options timeout:(NSUInteger)timeout connectBlack:(void(^_Nullable)(ConnectState state)) connectState;
+-(void)connectPeripheral:(CBPeripheral *)peripheral options:(nullable NSDictionary<NSString *,id> *)options timeout:(NSUInteger)timeout connectBlack:(void(^_Nullable)(ConnectState state))connectState;
 
 /**
  *  方法说明：连接外设
